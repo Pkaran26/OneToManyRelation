@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News</title>
+</head>
+<body>
+    <h2>News</h2>
+    <hr/>
+    <ul>
+        <li>
+            <a href="./">Home</a>
+        </li>
+        <li>
+            <a href="./reporterform">Add Reporter</a>
+        </li>
+        <li>
+            <a href="./articleform">Add Article</a>
+        </li>
+        <li>
+            <a href="./viewreporter">View Reporter</a>
+        </li>
+    </ul>
+    <hr/>
+    <div>
+        <form action="./addreporter" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>First Name : </th>
+                    <td>
+                        <input type="text" name="fname" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Last Name : </th>
+                    <td>
+                        <input type="text" name="lname" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email : </th>
+                    <td>
+                        <input type="email" name="email" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

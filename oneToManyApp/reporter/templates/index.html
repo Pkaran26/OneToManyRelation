@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News</title>
+</head>
+<body>
+    <h2>News</h2>
+    <hr/>
+    <ul>
+        <li>
+            <a href="./">Home</a>
+        </li>
+        <li>
+            <a href="./reporterform">Add Reporter</a>
+        </li>
+        <li>
+            <a href="./articleform">Add Article</a>
+        </li>
+        <li>
+            <a href="./viewreporter">View Reporter</a>
+        </li>
+    </ul>
+    <hr/>
+    <div>
+        {% for a in article %}
+        <div>
+            <h3>{{a.headline}}</h3>
+            <p>Reporter: <a href="{% url 'viewarticle' a.reporter.id %}">{{a.reporter}}</a></p>
+            <p>Publish Date: {{a.pub_date}}</p>
+        </div>
+        <hr/>
+        {% endfor %}
+    </div>
+</body>
+</html>

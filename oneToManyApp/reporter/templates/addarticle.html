@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News</title>
+</head>
+<body>
+    <h2>News</h2>
+    <hr/>
+    <ul>
+        <li>
+            <a href="./">Home</a>
+        </li>
+        <li>
+            <a href="./reporterform">Add Reporter</a>
+        </li>
+        <li>
+            <a href="./articleform">Add Article</a>
+        </li>
+        <li>
+            <a href="./viewreporter">View Reporter</a>
+        </li>
+    </ul>
+    <hr/>
+    <div>
+        <form action="./addarticle" method="post">
+            {%  csrf_token %}
+            <table>
+                <tr>
+                    <th>Reporter : </th>
+                    <td>
+                        <select name="reporter" id="">
+                            <option value="">Select</option>
+                            {% for r in reporter %}
+                            <option value="{{r.id}}">{{r}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Headline : </th>
+                    <td>
+                        <textarea name="headline" id="" cols="30" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Publish Date</th>
+                    <td>
+                        <input type="date" name="pbdate" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit"/>
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
